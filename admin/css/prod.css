@@ -1,0 +1,60 @@
+.bodya {
+    padding: 30px;
+    margin: 0; /* Añade margen 0 para que el cuerpo esté pegado al borde */
+}
+
+.image-container {
+    position: relative; /* Agrega posición relativa al contenedor de imágenes */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 90%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button,
+.buttonN,
+.buttonH {
+    position: absolute; /* Cambia a posición absoluta */
+    background-color: white;
+    border: 5px solid black;
+    padding: 10px 20px;
+    border-radius: 1px;
+}
+
+.button a,
+.buttonN a,
+.buttonH a {
+    text-decoration: none;
+    color: black;
+}
+
+.button {
+    top: 50%; /* Ajusta la posición vertical según tus necesidades */
+    left: 16%; /* Ajusta la posición horizontal según tus necesidades */
+    transform: translate(-50%, -50%);
+}
+
+.buttonN {
+    top: 50%; /* Ajusta la posición vertical según tus necesidades */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttonH {
+    top: 50%; /* Ajusta la posición vertical según tus necesidades */
+    left: 84%; /* Ajusta la posición horizontal según tus necesidades */
+    transform: translate(-50%, -50%);
+}
+
+.button a:hover,
+.buttonN a:hover,
+.buttonH a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: none; /* Evita que se subraye al pasar el ratón */
+}
