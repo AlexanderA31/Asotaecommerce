@@ -5,26 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
    
-   
+    <style>
+        /* Ajustar el tamaño de las imágenes en el carrusel */
+        #myCarousel img {
+            max-height: 650px; /* Ajusta el tamaño según tus necesidades */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+    </style>
     
 </head>
 <body>  
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand ">
 <img src="imgss\aso.png"  class="brand-image img-circle elevation-3" style="opacity: .8 max-width: 50px; max-height: 50px;">
                         <!-- Left navbar links -->
-                        <ul class="navbar-nav mr-auto">
+                        
+                        <ul class="navbar-nav">
   
                             <li class="nav-item">
                                 <a href="index.php" class="nav-link">Menu</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" >
                                 <a href="#" class="nav-link">Contacto</a>
+                            </li>
+                            <li class="nav-itema nav-link" style="color: red;">
+                                <span>|</span>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?modulo=hombre" class="nav-link">Hombre</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?modulo=mujer" class="nav-link">Mujer</a>
+                                <a href="index.php?modulo=mujer" class="nav-link" >Mujer</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?modulo=niño" class="nav-link">Niño</a>
@@ -32,7 +42,9 @@
                         
                         </ul>
 
-                    <!-- SEARCH FORM -->
+     
+                    <ul class="navbar-nav ml-auto">
+                                  <!-- SEARCH FORM -->
                     <form class="form-inline ml-3" action="index.php">
                         <div class="input-group input-group-sm">
                             <input class="form-control form-control-navbar bg-gray" type="search" placeholder="Search" aria-label="Search" name="nombre" value="<?php echo $_REQUEST['nombre'] ?? ''; ?>">
@@ -44,18 +56,17 @@
                             </div>
                         </div>
                     </form>
-                    <!-- Right navbar links -->
-                    <ul class="navbar-nav ml-auto">
                         <!-- Messages Dropdown Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link" data-toggle="dropdown" href="#" id="iconoCarrito">
-                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                <i class="fa fa-box-open" aria-hidden="true"></i>
                                 <span class="badge badge-danger navbar-badge" id="badgeProducto" style="font-size: 8px;"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="listaCarrito">
 
                             </div>
                         </li>
+                    
                         <!-- Notifications Dropdown Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -75,12 +86,13 @@
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="index.php?modulo=usuario" class="dropdown-item">
+                                   <a href="index.php?modulo=usuario&id=<?php echo $_SESSION['idCliente']; ?>" class="dropdown-item">
                                         <i class="fas fa-user text-primary mr-2"></i>Hola <?php echo $_SESSION['nombreCliente']; ?>
                                     </a>
+
                                     <form action="index.php" method="post">
                                         <button name="accion" class="btn btn-danger dropdown-item" type="submit" value="cerrar">
-                                            <i class="fas fa-door-closed text-danger mr-2"></i>Cerrar sesion
+                                        <i class="fas fa-door-closed text-danger mr-2"></i>Cerrar sesion
                                         </button>
                                     </form>
                                 <?php
@@ -90,6 +102,7 @@
                         </li>
                     </ul>               
  </nav>
+
 
                 <?php
                 $mensaje = $_REQUEST['mensaje'] ?? '';
@@ -105,6 +118,13 @@
                 <?php
                 }
                 ?>
+        <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("");
+			header.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 

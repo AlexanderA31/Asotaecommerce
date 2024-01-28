@@ -183,7 +183,7 @@ $(document).ready(function () {
             `
             <a href="index.php?modulo=carrito" class="dropdown-item dropdown-footer text-primary">
             Ver carrito 
-            <i class="fa fa-cart-plus"></i>
+            <i class="fa fa-box-open"></i>
             </a>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item dropdown-footer text-danger" id="borrarCarrito">

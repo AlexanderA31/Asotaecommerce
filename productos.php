@@ -13,37 +13,29 @@
 </head>
     
     <body>
-                    <div class="container-lg my-3">
-                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <!-- Carousel indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-                            </ol>
-                        
-                            <!-- Wrapper for carousel items -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="carrusel\c0016bc8ad5270abec0be10485f5d9ad.jpg" class="d-block w-100" alt="Slide 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="carrusel\ECqHudFWsAYFjD4.jpg" class="d-block w-100" alt="Slide 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="carrusel\ECqHudFWsAYFjD4.jpg" class="d-block w-100" alt="Slide 3">
-                                </div>
-                            </div>
-                        
-                            <!-- Carousel controls -->
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                    </div>
+    <div class="container-lg my-3">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="carrusel/347278611_233366962888008_5933785908126596684_n.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrusel/347551709_233366936221344_5014648292933804628_n.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrusel/347583107_233366982888006_7008172701789967248_n.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+    </div>
                         
 </body>
 <script>
@@ -57,17 +49,17 @@ document.addEventListener("DOMContentLoaded", function(){
     </div>
 <div class="image-container bodya">
     
-    <img src="imgss\mujer-sonriente-apunta-arriba.jpg">
+    <img src="imgss\mujerAjpg.jpg">
     <div class="button">
     <a href="index.php?modulo=mujer">Comprar para mujer →</a>
   </div>
 
-    <img src="imgss\13572-comportamientos-2-anos.jpg">
+    <img src="imgss\curumim_tatiana-zanon-unsplash_capa-1000x620.webp">
     <div class="buttonN">
     <a href="index.php?modulo=niño">Comprar para niño →</a>
   </div>
 
-    <img src="imgss\joven-hombre-guapo-camiseta-informal-sobre-fondo-azul-cara-feliz-sonriendo-brazos-cruzados-mirando-camara-persona-positiva.jpg">
+    <img src="imgss\_DSF3942_ed.max-760x504.jpg">
     <div class="buttonH">
     <a href="index.php?modulo=hombre">Comprar para hombre →</a>
   </div>
@@ -105,21 +97,21 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     $limite = " limit $inicioLimite,$elementosPorPagina ";
    
-    $query = "SELECT 
-    p.id,
-    p.nombre,
-    p.descripcion,
-    p.precio,
-    p.existencia,
-    f.web_path
-  FROM
-    productos AS p
-    INNER JOIN productos_files AS pf ON pf.producto_id=p.id
-    INNER JOIN files AS f ON f.id=pf.file_id
-  WHERE p.activo = 1
-  GROUP BY p.id
-  ORDER BY p.id DESC
-  LIMIT 3";
+                            $query = "SELECT 
+                            p.id,
+                            p.nombre,
+                            p.descripcion,
+                            p.precio,
+                            p.existencia,
+                            f.web_path
+                        FROM
+                            productos AS p
+                            INNER JOIN productos_files AS pf ON pf.producto_id=p.id
+                            INNER JOIN files AS f ON f.id=pf.file_id
+                        WHERE p.activo = 1
+                        GROUP BY p.id
+                        ORDER BY p.id DESC
+                        LIMIT 3";
 
 
     $res = mysqli_query($con, $query);

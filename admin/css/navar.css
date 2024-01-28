@@ -1,49 +1,58 @@
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        /* Navbar style */
-        .navbar {
-            background-color: #ffffff; /* Fondo blanco */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-        }
+header{
+    position: fixed;
+   
+}
 
-        .navbar-nav {
-            margin-right: 10px; /* Espacio a la derecha para los íconos */
-        }
+/* Navbar style */
+.navbar {
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    position: fixed;
+    width: 100%;
+}
 
-        .navbar-nav .nav-link {
-            color: #020202; /* Color del texto */
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
-        }
+.navbar-nav {
+    margin-right: 15px; /* Espacio a la derecha para los íconos */
+    
+}
 
-        .navbar-nav .nav-link:hover {
-            color: #000000; /* Cambia de color al pasar el ratón */
-        }
+.navbar-nav .nav-link {
+    color: #333; /* Color del texto */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    font-weight: bold; /* Texto en negrita */
 
-        .form-control-navbar {
-            border-radius: 20px; /* Bordes redondeados para el cuadro de búsqueda */
-        }
 
-        .btn-navbar {
-            background-color: #0a0a0a; /* Color del botón de búsqueda */
-            border: none;
-            border-radius: 20px;
-            
-        }
 
-        .btn-navbar:hover {
-            background-color: #000000; /* Cambia de color al pasar el ratón */
-        }
+}
 
-        .badge-danger {
-            background-color: #dc3545; /* Color de la insignia roja */
-        }
+.navbar-nav .nav-link:hover {
+    color: #00B1AD; /* Cambia de color al pasar el ratón */
+}
 
-        .dropdown-menu-right {
-            min-width: 200px; /* Ancho mínimo del menú desplegable */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-        }
+.form-control-navbar {
+    border-radius: 25px; /* Bordes redondeados para el cuadro de búsqueda */
+    border: 1px solid #ccc; /* Borde del cuadro de búsqueda */
+}
 
-       
+.btn-navbar {
+    background-color: #00B1AD; /* Color del botón de búsqueda */
+    border: none;
+    border-radius: 25px;
+    color: #fff; /* Color del texto del botón */
+}
+
+.btn-navbar:hover {
+    background-color: #00B1AD; /* Cambia de color al pasar el ratón */
+}
+
+.badge-danger {
+    background-color: #00B1AD; /* Color de la insignia roja */
+    font-size: 12px; /* Tamaño de la fuente de la insignia */
+}
+
+.dropdown-menu-right {
+    min-width: 210px; /* Ancho mínimo del menú desplegable */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
