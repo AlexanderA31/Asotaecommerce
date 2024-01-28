@@ -16,6 +16,13 @@
 </head>
 <body>  
 <nav class="navbar navbar-expand ">
+<script type="text/javascript">
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector(".navbar");
+        header.classList.toggle("abajo", window.scrollY > 0);
+    });
+</script>
+
 <img src="imgss\aso.png"  class="brand-image img-circle elevation-3" style="opacity: .8 max-width: 50px; max-height: 50px;">
                         <!-- Left navbar links -->
                         
@@ -118,12 +125,7 @@
                 <?php
                 }
                 ?>
-        <script type="text/javascript">
-		window.addEventListener("scroll", function(){
-			var header = document.querySelector("");
-			header.classList.toggle("abajo",window.scrollY>0);
-		})
-	</script>
+     
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
