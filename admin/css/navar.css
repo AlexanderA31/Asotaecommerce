@@ -1,14 +1,22 @@
-header{
-    position: fixed;
-   
-}
 
+header{
+    
+    position: fixed;
+    justify-content: space-between;
+    
+}
+body {
+   
+   background-color:#00B1AD;
+
+}
 /* Navbar style */
 .navbar {
     background-color: #ffffff; /* Fondo blanco */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     position: fixed;
     width: 100%;
+
 }
 
 .navbar-nav {
@@ -55,4 +63,8 @@ header{
     min-width: 210px; /* Ancho mínimo del menú desplegable */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+.myCarousel img {
+    max-height: 150px; /* Ajusta el tamaño según tus necesidades */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
 }

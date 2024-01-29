@@ -4,24 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   
-    <style>
-        /* Ajustar el tamaño de las imágenes en el carrusel */
-        #myCarousel img {
-            max-height: 650px; /* Ajusta el tamaño según tus necesidades */
-            margin: 0 auto; /* Centra la imagen horizontalmente */
-        }
-    </style>
     
 </head>
-<body>  
-<nav class="navbar navbar-expand ">
-<script type="text/javascript">
-    window.addEventListener("scroll", function(){
-        var header = document.querySelector(".navbar");
-        header.classList.toggle("abajo", window.scrollY > 0);
-    });
-</script>
+<body >  
+<nav class="navbar navbar-expand">
+
 
 <img src="imgss\aso.png"  class="brand-image img-circle elevation-3" style="opacity: .8 max-width: 50px; max-height: 50px;">
                         <!-- Left navbar links -->
@@ -108,7 +95,8 @@
                             </div>
                         </li>
                     </ul>               
- </nav>
+                        </nav>
+                            </body > 
 
 
                 <?php
@@ -132,3 +120,20 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const scrollbar = document.querySelector(".scrollbar"); // Get the scrollbar element
+const content = document.querySelector("body"); // Get the content element (body in this case)
+
+// Listen for scroll events on the content
+content.addEventListener("scroll", () => {
+    // Get the current scroll position of the content
+    const scrollPosition = content.scrollTop;
+
+    // Update the scroll position of the scrollbar
+    scrollbar.scrollTop = scrollPosition;
+});
+</script>
+
+</body>
+</html>	
