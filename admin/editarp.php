@@ -14,6 +14,7 @@ if (isset($_REQUEST['guardar'])) {
     $existencia = mysqli_real_escape_string($con, $_POST['existencia']);    
     $categoria = mysqli_real_escape_string($con, $_POST['categoria']);
     $talla = mysqli_real_escape_string($con, $_POST['talla']);
+    $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
     $producto_id = $_POST['id'];
 
     // Actualizar la información del producto
@@ -23,7 +24,8 @@ if (isset($_REQUEST['guardar'])) {
         precio='$precio', 
         existencia='$existencia' ,
         categoria='$categoria',
-        talla='$talla'
+        talla='$talla',
+        tipo='$tipo'
     WHERE id=$producto_id";
 
     $resultUpdate = mysqli_query($con, $queryUpdate);
@@ -127,6 +129,12 @@ $resImagenes = mysqli_query($con, $queryImagenes);
                                     <label class="btn btn-secondary <?php echo ($row['categoria'] == 'niño') ? 'active' : ''; ?>">
                                         <input type="radio" name="categoria" value="niño" <?php echo ($row['categoria'] == 'niño') ? 'checked' : ''; ?>> Niño
                                     </label>
+                                    <label class="btn btn-secondary <?php echo ($row['categoria'] == 'estudiante') ? 'active' : ''; ?>">
+                                        <input type="radio" name="categoria" value="estudiante" <?php echo ($row['categoria'] == 'estudiante') ? 'checked' : ''; ?>> Estudiante
+                                    </label>
+                                    <label class="btn btn-secondary <?php echo ($row['categoria'] == 'temporada') ? 'active' : ''; ?>">
+                                        <input type="radio" name="categoria" value="temporada" <?php echo ($row['categoria'] == 'temporada') ? 'checked' : ''; ?>> Temporada
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -138,12 +146,25 @@ $resImagenes = mysqli_query($con, $queryImagenes);
                                     <!-- Agrega más opciones según tus necesidades -->
                                 </select>
                             </div>
+
+                            <div class="form-group">
+                                <label for="tipo">Tipo:</label>
+                                <div class="btn-group  btn-sm" data-toggle="buttons">
+                                    <label class="btn btn-secondary <?php echo ($row['tipo'] == 'camisa') ? 'active' : ''; ?>">
+                                        <input type="radio" name="tipo" value="camisa" <?php echo ($row['tipo'] == 'camisa') ? 'checked' : ''; ?>> Camisa
+                                    </label>
+                                    <label class="btn btn-secondary <?php echo ($row['tipo'] == 'pantalon') ? 'active' : ''; ?>">
+                                        <input type="radio" name="tipo" value="pantalon" <?php echo ($row['tipo'] == 'pantalon') ? 'checked' : ''; ?>> Pantalon
+                                    </label>
+                                </div>
+                            </div>
+
                                 <label for="imagen">Imagen:</label>
                                 <input type="file" name="imagen[]" id="imagen" multiple>
                                 <br>
                                 <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id']; ?>">
                                 <br>
-                                <input type="submit" value="Guardar" name="guardar">
+                                <input type="submit"class="btn btn-primary" value="Guardar" name="guardar">
                              <!-- Sección para mostrar imágenes existentes -->
                              <div class="mb-3">
                                     <h5>Imagenes existentes</h5>

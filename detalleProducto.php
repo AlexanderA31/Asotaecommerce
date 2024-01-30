@@ -1,7 +1,7 @@
 
 <?php
 $id = mysqli_real_escape_string($con, $_REQUEST['id'] ?? '');
-$queryProducto = "SELECT id,nombre,descripcion,precio,existencia,categoria,talla FROM productos where id='$id';  ";
+$queryProducto = "SELECT id,nombre,descripcion,precio,existencia,categoria,talla,tipo FROM productos where id='$id';  ";
 $resProducto = mysqli_query($con, $queryProducto);
 $rowProducto = mysqli_fetch_assoc($resProducto);
 ?>
@@ -46,6 +46,7 @@ $rowProducto = mysqli_fetch_assoc($resProducto);
                 <p><?php echo $rowProducto['descripcion'] ?></p>
                 <p>Para: <?php echo $rowProducto['categoria'] ?></p>
                 <p>Talla: <?php echo $rowProducto['talla'] ?></p>
+                <p>Tipo: <?php echo $rowProducto['tipo'] ?></p>
                 
                 <hr>
                 <p>Existencias: <?php echo $rowProducto['existencia'] ?></p>

@@ -35,16 +35,17 @@ $con = mysqli_connect($host, $user, $pass, $db);
                                       <th>Imagen(es)</th>
                                       <th>Categoría</th>
                                       <th>Talla</th>
+                                      <th>Tipo</th>
                                       <th>Acciones</th>
                                       
                                   </tr>
                                   <tbody>
                                   <?php
 
-                                                $query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.existencia, p.activo,  p.categoria, p.talla, COUNT(pf.file_id) AS num_imagenes
+                                                $query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.existencia, p.activo,  p.categoria, p.talla,p.tipo, COUNT(pf.file_id) AS num_imagenes
                                                 FROM productos AS p
                                                 LEFT JOIN productos_files AS pf ON pf.producto_id = p.id
-                                                GROUP BY p.id, p.nombre, p.descripcion, p.precio, p.existencia, p.activo,  p.categoria, p.talla;";
+                                                GROUP BY p.id, p.nombre, p.descripcion, p.precio, p.existencia, p.activo,  p.categoria, p.talla, p.tipo;";
 
 
                                                     $res = mysqli_query($con, $query);
@@ -61,6 +62,7 @@ $con = mysqli_connect($host, $user, $pass, $db);
                                         <td><?php echo $row['num_imagenes']; ?></td>
                                         <td><?php echo $row['categoria']; ?></td>
                                         <td><?php echo $row['talla']; ?></td>
+                                        <td><?php echo $row['tipo']; ?></td>
 
                                     
                                    
@@ -152,18 +154,42 @@ $con = mysqli_connect($host, $user, $pass, $db);
                                                                 <label class="btn btn-secondary">
                                                                     <input type="radio" name="categoria" id="categoriaNiño" value="niño"> Niño
                                                                 </label>
+                                                                <label class="btn btn-secondary">
+                                                                    <input type="radio" name="categoria" id="categoriaEstudiante" value="niño"> Estudiante
+                                                                </label>
+                                                                <label class="btn btn-secondary">
+                                                                    <input type="radio" name="categoria" id="categoriaTemporada" value="temporada"> Temporada
+                                                                </label>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="talla">Talla:</label>
-                                                            <div class="input-group" style="max-width: 60px;">
-                                                                <select class="custom-select" id="talla" name="talla" required>
-                                                                    <option value="S">S</option>
-                                                                    <option value="M">M</option>
-                                                                    <option value="L">L</option>
-                                                                    <!-- Agrega más opciones según tus necesidades -->
-                                                                </select>
+                                                                <label>Tallas:</label>
+                                                                <div class="checkbox-group">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="tallaS" name="tallas[]" value="S">
+                                                                        <label class="form-check-label" for="tallaS">S</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="tallaM" name="tallas[]" value="M">
+                                                                        <label class="form-check-label" for="tallaM">M</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="tallaL" name="tallas[]" value="L">
+                                                                        <label class="form-check-label" for="tallaL">L</label>
+                                                                    </div>
+                                                                    <!-- Puedes agregar más opciones según tus necesidades -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                            <label for="tipo">Tipo:</label>
+                                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                <label class="btn btn-secondary active">
+                                                                    <input type="radio" name="categoria" id="TipoCamisa" value="camisa" checked> Camisa
+                                                                </label>
+                                                                <label class="btn btn-secondary">
+                                                                    <input type="radio" name="categoria" id="TipoPantalon" value="pantalon"> Pantalon
+                                                                </label>
                                                             </div>
                                                         </div>
 

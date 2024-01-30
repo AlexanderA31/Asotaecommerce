@@ -34,11 +34,13 @@
                     session_start();
                     $email = $_REQUEST['email'] ?? '';
                     $nombre = $_REQUEST['nombre'] ?? '';
+                    $cedula = $_REQUEST['cedula'] ?? '';
+                    $direccion = $_REQUEST['direccion'] ?? '';
                     $pasword = $_REQUEST['pass'] ?? '';
                     $pasword = md5($pasword);
                     include_once "admin/db_ecommerce.php";
                     $con = mysqli_connect($host, $user, $pass, $db);
-                    $query = "INSERT into clientes (nombre,email,pass) values ('$nombre','$email','$pasword')";
+                    $query = "INSERT into clientes (nombre,email,cedula,direccion,pass) values ('$nombre','$email','$cedula','$direccion','$pasword')";
                     $res = mysqli_query($con, $query);
                     if ($res) {
                     ?>
@@ -65,6 +67,14 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
+                        <input type="cedula" class="form-control" placeholder="Cedula" name="cedula">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-id-card"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -77,6 +87,14 @@
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="direccion" class="form-control" placeholder="Direccion" name="direccion">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-arrow-right"></span>
                             </div>
                         </div>
                     </div>

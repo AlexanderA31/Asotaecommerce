@@ -33,6 +33,12 @@
                             <li class="nav-item">
                                 <a href="index.php?modulo=niño" class="nav-link">Niño</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="index.php?modulo=niño" class="nav-link">Estudiantes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?modulo=niño" class="nav-link">Temporada</a>
+                            </li>
                         
                         </ul>
 

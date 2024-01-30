@@ -41,7 +41,7 @@
 include_once "admin/db_ecommerce.php";
 $con = mysqli_connect($host, $user, $pass, $db);
 ?>
-    <div class="w3-container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                
