@@ -12,11 +12,13 @@ if (isset($_POST['guardar'])) {
     $precio = mysqli_real_escape_string($con, $_POST['precio']);
     $existencia = mysqli_real_escape_string($con, $_POST['existencia']);
     $categoria = mysqli_real_escape_string($con, $_POST['categoria']);
+    $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
     $talla = mysqli_real_escape_string($con, $_POST['talla']);
+    $colores = mysqli_real_escape_string($con, $_POST['colores']);
 
     // Insertar datos del producto en la tabla 'productos'
-    $query = "INSERT INTO productos (nombre, descripcion, precio, existencia,  categoria, talla) 
-              VALUES ('$nombre', '$descripcion', '$precio', '$existencia','$categoria','$talla')";
+    $query = "INSERT INTO productos (nombre, descripcion, precio, existencia,  categoria, talla, tipo, colores) 
+              VALUES ('$nombre', '$descripcion', '$precio', '$existencia','$categoria','$talla','$tipo','$colores')";
 
     mysqli_query($con, $query);
 

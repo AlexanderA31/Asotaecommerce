@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
 <?php
     $total=$_REQUEST['total']??'';
     include_once "stripe/init.php";
@@ -143,10 +158,11 @@
         </table>
         <div class="d-flex justify-content-end mt-3 mr-2">
     <a class="btn btn-secondary" target="_blank" href="imprimirFactura.php?idVenta=<?php echo $idVenta; ?>" role="button">
-        Imprimir factura <i class="fas fa-file-pdf"></i>
+        Imprimir Recibo <i class="fas fa-file-pdf"></i>
     </a>
     </div>
 
         <?php
         }
 ?>
+</body>

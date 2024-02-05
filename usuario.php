@@ -3,13 +3,14 @@
 if (isset($_SESSION['idCliente'])) {
     if (isset($_POST['guardarp'])) {
         $nombreCli = $_POST['nombreCli'] ?? '';
+        $cedulaCli = $_POST['cedulaCli'] ?? '';
         $emailCli = $_POST['emailCli'] ?? '';
         $direccionCli = $_POST['direccionCli'] ?? '';
 
         // Evitar SQL Injection utilizando consultas preparadas
-        $queryCli = "UPDATE clientes SET nombre=?, email=?, direccion=? WHERE id=?";
+        $queryCli = "UPDATE clientes SET nombre=?, cedula=?, email=?, direccion=? WHERE id=?";
         $stmtCli = mysqli_prepare($con, $queryCli);
-        mysqli_stmt_bind_param($stmtCli, "sssi", $nombreCli, $emailCli, $direccionCli, $_SESSION['idCliente']);
+        mysqli_stmt_bind_param($stmtCli, "ssssi", $nombreCli, $cedulaCli, $emailCli, $direccionCli,  $_SESSION['idCliente']);
         $resCli = mysqli_stmt_execute($stmtCli);
 
         if ($resCli) {
@@ -25,7 +26,7 @@ if (isset($_SESSION['idCliente'])) {
 }
 
 // Realiza la consulta para obtener los datos del cliente
-$queryCli = "SELECT nombre, email, direccion FROM clientes WHERE id='" . $_SESSION['idCliente'] . "'";
+$queryCli = "SELECT nombre,  cedula, email, direccion FROM clientes WHERE id='" . $_SESSION['idCliente'] . "'";
 $resCli = mysqli_query($con, $queryCli);
 
 if ($resCli) {
@@ -47,8 +48,12 @@ if ($resCli) {
                     <input type="text" name="nombreCli" id="nombreCli" class="form-control" value="<?php echo $rowCli['nombre'] ?>">
                 </div>
                 <div class="form-group">
+                    <label for="cedulaCli">Cedula</label>
+                    <input type="text" name="cedulaCli" id="cedulaCli" class="form-control" value="<?php echo $rowCli['cedula'] ?>">
+                </div>
+                <div class="form-group">
                     <label for="emailCli">Email</label>
-                    <input type="email" name="emailCli" id="emailCli" class="form-control" readonly value="<?php echo $rowCli['email'] ?>">
+                    <input type="email" name="emailCli" id="emailCli" class="form-control"value="<?php echo $rowCli['email'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="direccionCli">Dirección</label>
@@ -68,12 +73,14 @@ if ($resCli) {
     document.addEventListener('DOMContentLoaded', function () {
         // Obtén referencias a los campos y al botón
         var nombreInput = document.getElementById('nombreCli');
+        var cedulaInput = document.getElementById('cedulaCli');
         var emailInput = document.getElementById('emailCli');
         var direccionInput = document.getElementById('direccionCli');
         var btnGuardarGroup = document.getElementById('btnGuardarGroup');
 
         // Agrega eventos de cambio a los campos para activar el botón de guardar
         nombreInput.addEventListener('input', activarBotonGuardar);
+        cedulaInput.addEventListener('input', activarBotonGuardar);
         emailInput.addEventListener('input', activarBotonGuardar);
         direccionInput.addEventListener('input', activarBotonGuardar);
 

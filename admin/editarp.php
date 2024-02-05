@@ -14,6 +14,8 @@ if (isset($_REQUEST['guardar'])) {
     $existencia = mysqli_real_escape_string($con, $_POST['existencia']);    
     $categoria = mysqli_real_escape_string($con, $_POST['categoria']);
     $talla = mysqli_real_escape_string($con, $_POST['talla']);
+    $colores = mysqli_real_escape_string($con, $_POST['colores']);
+
     $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
     $producto_id = $_POST['id'];
 
@@ -25,6 +27,8 @@ if (isset($_REQUEST['guardar'])) {
         existencia='$existencia' ,
         categoria='$categoria',
         talla='$talla',
+        colores='$colores',
+
         tipo='$tipo'
     WHERE id=$producto_id";
 
@@ -135,17 +139,12 @@ $resImagenes = mysqli_query($con, $queryImagenes);
                                     <label class="btn btn-secondary <?php echo ($row['categoria'] == 'temporada') ? 'active' : ''; ?>">
                                         <input type="radio" name="categoria" value="temporada" <?php echo ($row['categoria'] == 'temporada') ? 'checked' : ''; ?>> Temporada
                                     </label>
+                                    <label class="btn btn-secondary <?php echo ($row['categoria'] == 'deportivo') ? 'active' : ''; ?>">
+                                        <input type="radio" name="categoria" value="deportivo" <?php echo ($row['categoria'] == 'deportivo') ? 'checked' : ''; ?>> Deportivo
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="talla">Talla:</label>
-                                <select class="form-control small-select" id="talla" name="talla"  style="width: 50px;">
-                                    <option value="S" <?php echo ($row['talla'] == 'S') ? 'selected' : ''; ?>>S</option>
-                                    <option value="M" <?php echo ($row['talla'] == 'M') ? 'selected' : ''; ?>>M</option>
-                                    <option value="L" <?php echo ($row['talla'] == 'L') ? 'selected' : ''; ?>>L</option>
-                                    <!-- Agrega más opciones según tus necesidades -->
-                                </select>
-                            </div>
+                        
 
                             <div class="form-group">
                                 <label for="tipo">Tipo:</label>
@@ -158,7 +157,13 @@ $resImagenes = mysqli_query($con, $queryImagenes);
                                     </label>
                                 </div>
                             </div>
-
+                            <br>
+                            <label for="talla">Tallas:</label>
+                                <input type="text" name="talla" id="talla" value="<?php echo $row['talla']; ?>">
+                                <br>
+                                <label for="colores">Colores:</label>
+                                <input type="text" name="colores" id="colores" value="<?php echo $row['colores']; ?>">
+                                <br>
                                 <label for="imagen">Imagen:</label>
                                 <input type="file" name="imagen[]" id="imagen" multiple>
                                 <br>

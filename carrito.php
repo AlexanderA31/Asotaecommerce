@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
 <table class="table table-striped table-inverse" id="tablaCarrito" >
     <thead class="thead-inverse">
         <tr>
@@ -10,6 +26,9 @@
         </tr>
     </thead>
     <tbody>
+        
+    <div >
+    </div>
     </tbody>
 </table>
 </table>
@@ -22,6 +41,7 @@
         <i class="fas fa-truck"></i> Detalles de envío
     </a>
 </div>
-
+</div>
+<body>
 
 

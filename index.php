@@ -8,6 +8,8 @@
     <title>Asotaeco</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="admin\css\navar.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -21,7 +23,15 @@
     <!-- Pasarela de pago -->
     <link rel="stylesheet" href="admin/css/stripe.css">
     <link rel="stylesheet" href="admin\css\prod.css">
-    <link rel="stylesheet" href="admin\css\navar.css">
+   <!-- Pasarela de pago  -->
+   
+   <link rel="stylesheet" href="admin\css\hdhdh.css">
+   
+
+   <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     
 
    
@@ -68,22 +78,40 @@ $con = mysqli_connect($host, $user, $pass, $db);
                     include_once "factura.php";
                 }
                 if( $modulo=="niño" ){
-                    include_once "niño.php";
+                    include_once "categorias\liño.php";
                 }
                 if( $modulo=="mujer" ){
-                    include_once "mujer.php";
+                    include_once "categorias\mujer.php";
                 }
                 if( $modulo=="hombre" ){
-                    include_once "hombre.php";
+                    include_once "categorias\hombre.php";
+                }
+                if( $modulo=="estudiante" ){
+                    include_once "categorias\istudiante.php";
+                }
+                if( $modulo=="deportivo" ){
+                    include_once "categorias\deportivo.php";
+                }
+                if( $modulo=="temporada" ){
+                    include_once "categorias\iemporada.php";
                 }
                 if( $modulo=="usuario" ){
                     include_once "usuario.php";
+                }
+                if( $modulo=="informacion" ){
+                    include_once "informacion.php";
+                }
+                if( $modulo=="reglamento" ){
+                    include_once "reglamento.php";
+                }
+                if( $modulo=="resultados" ){
+                    include_once "resultados.php";
                 }
                 ?>
             </div>
         </div>
     </div>
-   
+    <?php include_once "footer.php"; ?>
     <!-- jQuery UI 1.11.4 -->
     <script src="admin/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->

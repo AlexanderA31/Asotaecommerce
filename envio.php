@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
 <?php
 if (isset($_SESSION['idCliente'])) {
     if(isset($_REQUEST['guardar'])){
@@ -38,11 +53,11 @@ if (isset($_SESSION['idCliente'])) {
     $rowRec['direccion']=$rowRec['direccion']??''; 
 
 ?>
-    <form method="post">
-        <div class="container mt-3">
+    <form class="centradorr">
+        <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h3>Datos del cliente</h3>
+                    <h4>Datos del cliente</h4>
                     <div class="form-group">
                         <label for="">Nombre</label>
                         <input type="text" name="nombreCli" id="nombreCli" class="form-control" value="<?php echo $rowCli['nombre'] ?>">
@@ -58,7 +73,7 @@ if (isset($_SESSION['idCliente'])) {
 
                 </div>
                 <div class="col-6">
-                    <h3>Datos de quien recibe</h3>
+                    <h4>Datos del que recibe </h4>
                     <div class="form-group">
                         <label for="">Nombre</label>
                         <input type="text" name="nombreRec" id="nombreRec" class="form-control" value="<?php echo $rowRec['nombre'] ?>">
@@ -71,15 +86,17 @@ if (isset($_SESSION['idCliente'])) {
                         <label for="">Direccion</label>
                         <textarea name="direccionRec" id="direccionRec" class="form-control" row="3"><?php echo $rowRec['direccion'] ?></textarea>
                     </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" id="jalar">
-                            Mantener datos del cliente
-                        </label>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+        <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" id="jalar">&nbsp;
+                            Mantener datos del cliente
+                        </label>
+                    </div>
+
         <div class="d-flex justify-content-center mt-4">
     <a class="btn btn-warning mr-2" href="index.php?modulo=carrito" role="button">
         <i class="fas fa-shopping-cart"></i> Regresar al carrito
@@ -94,8 +111,8 @@ if (isset($_SESSION['idCliente'])) {
 <?php
 } else {
 ?>
-    <div class="mt-5 text-center" style="font-size: 16px; color: #555;">
-    Para continuar, por favor <a href="login.php" style="text-decoration: underline; color: #007BFF;">inicie sesión</a> o <a href="registro.php" style="text-decoration: underline; color: #007BFF;">regístrese</a>.
+    <div class="text-center centradorr">
+    Para continuar, por favor <a href="login.php" style="text-decoration: underline; color: #007BFF;">inicie sesión</a> o <a href="registro.php" style="text-decoration: underline; color: #007BFF;">regístrese</a>
 </div>
 
 
@@ -103,3 +120,4 @@ if (isset($_SESSION['idCliente'])) {
 
 }
 ?>
+</body>
