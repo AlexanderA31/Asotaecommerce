@@ -17,7 +17,9 @@
     </style>
 </head>
 <body>
-    
+<div class="col-12 text-center">
+        <h2 style="font-weight: bold; color: black;  "> Ropa para mujer</h2>
+</div>
     <?php
     $where = " where 1=1 ";
     $nombre = mysqli_real_escape_string($con, $_REQUEST['nombre'] ?? '');
@@ -87,52 +89,6 @@
             ?>
     </div>
 </div>
-
-<?php
-if ($totalPaginas > 0) {
-    //paginador del ecommerce
-    ?>
-        <nav aria-label="Page navigation "class="mt-4 mb-4 ml-2">
-            <ul class="pagination ">
-                <?php
-                if ($paginaSel != 1) {
-                ?>
-                    <li class="page-item ">
-                        <a class="page-link" href="index.php?modulo=productos&pagina=<?php echo ($paginaSel - 1); ?>" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                <?php
-                }
-                ?>
-
-                <?php
-                for ($i = 1; $i <= $totalPaginas; $i++) {
-                ?>
-                    <li class="page-item <?php echo ($paginaSel == $i) ? " active " : " "; ?>">
-                        <a class="page-link" href="index.php?modulo=productos&pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
-                <?php
-                }
-                ?>
-                <?php
-                if ($paginaSel != $totalPaginas) {
-                ?>
-                    <li class="page-item">
-                        <a class="page-link" href="index.php?modulo=productos&pagina=<?php echo ($paginaSel + 1); ?>" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                <?php
-                }
-                ?>
-            </ul>
-        </nav>
-    <?php
-}
-?>
 
 </body>
 

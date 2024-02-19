@@ -1,60 +1,49 @@
-.bodya {
-    padding: 30px;
-    margin: 0; /* Añade margen 0 para que el cuerpo esté pegado al borde */
+.centradorri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 80px; /* Ajusta el espacio entre los productos según tus preferencias */
+    justify-content: center;
+    padding: 20px; /* Ajusta el espaciado interno del contenedor según tus preferencias */
+    max-width: 1200px; /* Establece un ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
 }
 
-.image-container {
-    position: relative; /* Agrega posición relativa al contenedor de imágenes */
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.image-container img {
-    width: 90%;
-    height: auto;
+.producto {
+    width: 100%; /* Haz que cada producto ocupe el 100% del ancho del contenedor */
+    text-align: center;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.button,
-.buttonN,
-.buttonH {
-    position: absolute; /* Cambia a posición absoluta */
-    background-color: white;
-    border: 5px solid black;
-    padding: 10px 20px;
-    border-radius: 1px;
+.producto:hover {
+    transform: scale(1.05);
 }
 
-.button a,
-.buttonN a,
-.buttonH a {
-    text-decoration: none;
-    color: black;
+.producto img {
+    width: 100%;
+    height: 300px; /* Ajusta la altura según tu preferencia */
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
 }
 
-.button {
-    top: 50%; /* Ajusta la posición vertical según tus necesidades */
-    left: 16%; /* Ajusta la posición horizontal según tus necesidades */
-    transform: translate(-50%, -50%);
+.producto-info {
+    padding: 10px;
 }
 
-.buttonN {
-    top: 50%; /* Ajusta la posición vertical según tus necesidades */
-    left: 50%;
-    transform: translate(-50%, -50%);
+.producto-info p {
+    margin: 5px 0;
+    font-size: 14px;
 }
 
-.buttonH {
-    top: 50%; /* Ajusta la posición vertical según tus necesidades */
-    left: 84%; /* Ajusta la posición horizontal según tus necesidades */
-    transform: translate(-50%, -50%);
+.producto-info .precio {
+    color: #00b894; /* Color verde para el precio */
+    font-weight: bold;
 }
 
-.button a:hover,
-.buttonN a:hover,
-.buttonH a:hover {
-    color: rgb(0, 0, 0);
-    text-decoration: none; /* Evita que se subraye al pasar el ratón */
+.producto-info .existencia {
+    color: #0984e3; /* Color azul para la existencia */
+    font-weight: bold;
 }

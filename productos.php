@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
     <style>
         /* Ajustar el tamaño de las imágenes en el carrusel */
         #myCarousel img {
@@ -49,7 +50,6 @@
     </div>                  
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function(){
     var element = document.getElementById("myCarousel");
@@ -57,50 +57,10 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 </script>
-<style>
-  .swiper-container {
-      border-radius: 50%; /* Redondea completamente el contenedor */
-      overflow: hidden;
-    }
 
-    .swiper-slide {
-      border-radius: 50%; /* Redondea completamente cada slide */
-      overflow: hidden;
-    }
 
-    .swiper-slide img {
-      width: 100%;
-      border-radius: 20px; /* Ajusta el valor según tus preferencias para redondear los bordes de las imágenes */
-    }
-  </style>
-<div style="margin-left: 20px;">
-  <h2 style="font-weight: ; color: black; "> ¿Para quien compras? </h2>
-</div>
-<div class="container-lg my-3">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        
-        <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-around">
-                <a href="index.php?modulo=mujer">
-                <img src="categoriaimg/11979635916830.webp" class="d-block w-100" alt="Slide 1">
-            </a>
-            <a href="index.php?modulo=hombre">
-                <img src="categoriaimg/11979635916830.webp" class="d-block w-100" alt="Slide 2">
-            </a>
-            <a href="index.php?modulo=niño">
-                <img src="categoriaimg/11979635916830.webp" class="d-block w-100" alt="Slide 3">
-            </a>
-            <a href="index.php?modulo=estudiante">
-                <img src="categoriaimg/11979635916830.webp" class="d-block w-100" alt="Slide 4">
-            </a>
-                </div>
-            </div>
-            <!-- Agrega más elementos de carrusel según sea necesario -->
-        </div>
-    </div>
-</div>
+ 
+
 
 <div style="margin-left: 20px;">
   <h2 style="font-weight: ; color: black; "> Productos recientes </h2>
@@ -138,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(){
                             p.descripcion,
                             p.precio,
                             p.existencia,
+                            p.talla,
                             f.web_path
                         FROM
                             productos AS p
@@ -151,176 +112,153 @@ document.addEventListener("DOMContentLoaded", function(){
 
    
 ?>
-<div class="centradorr">
+
+<div class="centradorri">
     <?php
-        $res = mysqli_query($con, $query);
-        while ($row = mysqli_fetch_assoc($res)) {
-            //for($i=0;$i<10;$i++){
-        ?>
-            <div class="" style=";">
-                <div class="" style="">
-                    <img class="card-img-top img-thumbnail" style="object-fit: cover; width: 100%; height: 50%;" src="<?php echo $row['web_path'] ?>" alt="">
-                    <div class="card-body">
-                        <h2 class="card-title"><strong><?php echo $row['nombre'] ?></strong></h2>
-                        <p class="card-text"><strong>Precio:</strong><?php echo $row['precio'] ?>$</p>
-                        <p class="card-text"><strong>Existencia:</strong><?php echo $row['existencia'] ?></p>
-                        <a href="index.php?modulo=detalleproducto&id=<?php echo $row['id'] ?>" class="btn btn-primary">Ver</a>
-                    </div>
-                </div>
+    $res = mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($res)) {
+    ?>
+        <a href="index.php?modulo=detalleproducto&id=<?php echo $row['id'] ?>" class="producto">
+            <img src="<?php echo $row['web_path'] ?>" alt="<?php echo $row['nombre'] ?>">
+            <div class="producto-info">
+                <h2 class="card-title"><strong><?php echo $row['nombre'] ?></strong></h2>
+                <p class="precio"><strong>Precio:</strong> $<?php echo $row['precio'] ?></p>
+                <p class="talla"><strong>Talla:</strong> <?php echo $row['talla'] ?></p>
+                <p class="existencia"><strong>Existencia:</strong> <?php echo $row['existencia'] ?></p>
             </div>
-
-
-        <?php
-            }
-        //}
-        ?>
-
-</div>
+        </a>
+    <?php
+    }
+    ?>
+</div> 
+</div> 
+<div style="margin-left: 20px;">
+  <h2 style="font-weight: ; color: black; "> Ropa de Temporada </h2>
+  
 </div>
 <style>
-   /* Style for the contact section */
-   #contact {
-      background-color: #f8f8f8;
-      padding: 60px 0;
-   }
+    .containeru {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+    }
 
-   /* Style for the Contact Us heading */
-   .titlepage h2 span.green {
-      color: #28a745; /* Green color */
-   }
-
-   /* Style for the form container */
-   .main_form {
-      background-color: #fff;
+    .text-container {
+      max-width: 50%;
       padding: 20px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      font-size: 23px;
+    }
+
+    .image-container {
+      max-width: 20%;
+      position: relative;
+      overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   }
+    }
 
-   /* Style for the input fields */
-   .contactus {
+    .image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .image:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+    .containeru {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .text-container {
+      max-width: 100%;
+    }
+
+    .image-container {
+      max-width: 100%;
+    }
+
+    .image {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-   }
+      height: auto;
+    }
 
-   /* Style for the submit button */
-   .send_btn {
-      background-color: #28a745; /* Green color */
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-   }
+    .contenedor-imagenes {
+      flex-direction: column;
+    }
 
-   .send_btn:hover {
-      background-color: #218838; /* Darker green color on hover */
-   }
-
-   /* Style for the map container */
-   .map_main {
-      margin-top: 20px;
-   }
-
-   /* Responsive styling for the map */
-   .map-responsive {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-      height: 0;
-   }
-
-   .map-responsive iframe {
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-   }
+    .contenedor-imagenes a {
+      margin: 10px 0;
+    }
+  }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 </style>
-<div id="contact" class="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2><span class="green">Contáctanos</span></h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form id="request" class="main_form">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Nombre" type="text" name="Nombre">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Correo" type="text" name="Correo">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Número de teléfono" type="text" name="PhoneNumber">
-                        </div>
-                        <div class="col-md-12">
-                            <button class="send_btn">Enviar</button>
-                        </div>
-                    </div>
-                </form><br>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/margoty1987" target="_blank">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-                    Facebook
-                </div>
 
-                <div class="reglamento">
-                    <a href="pdf\ESTATUTO.pdf"  download="nombre-archivo.pdf">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                    </a>
-                    Estatuto
-                </div>
+<div class="containeru">
+  <div class="text-container">
 
-                <div class="reglamento">
-                    <a href="pdf\reglamento-interno (1).pdf" download="nombre-archivo.pdf">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                    </a>
-                    Reglamento Interno
-                </div>
+    <p>Sumérgete en la frescura y la elegancia de la primavera con la encantadora camisa "Flores de Asotaeco" de la prestigiosa Asociación Textil Artesanal Asotaeco. Esta prenda única combina la 
+        maestría artesanal con la vibrante esencia de la naturaleza, creando un diseño que captura la belleza efímera de las flores en plena temporada.</p>
+  </div>
 
-            </div>
-            <div class="col-md-6">
-                <div class="contact-info">
-                   
-
-                    <p class="icon-text" style="display: flex; align-items: center;">
-                        <ion-icon name="mail-outline" style="margin-right: 5px;"></ion-icon>
-                        <span>asotaec@hotmail.com</span>
-                    </p>
-
-                    <p class="icon-text" style="display: flex; align-items: center;">
-                        <ion-icon name="call-outline" style="margin-right: 5px;"></ion-icon>
-                        <span>099 523 6593</span>
-                    </p>
-                    <p class="icon-text" style="display: flex; align-items: center;">
-                        <ion-icon name="location-outline" style="margin-right: 5px;"></ion-icon>
-                        <span>Barrio “Las Palmas”, calle Ayahuaca</span>
-                    </p>
-                </div>
-
-                <div class="map_main">
-                    <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2313560558673!2d-77.81956842526523!3d-0.9828160353692498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d6a5fdca06774d%3A0x5dbc3647ff4e1453!2sAsociaci%C3%B3n%20%22Asotaeco%22!5e0!3m2!1ses!2sec!4v1706770322235!5m2!1ses!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                
-            </div>
-        
-        </div>
-    </div>
+  <div class="image-container">
+    <img class="image" src="imgss\tempo.jpeg" alt="Imagen Grande">
+  </div>
 </div>
+
+<div style="margin-left: 20px;">
+  <h2 style="font-weight: ; color: black; "> ¿Para quien compras? </h2>
+</div>
+<style>
+  .contenedor-imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contenedor-imagenes a {
+    margin: 0 30px; /* Ajusta el margen entre las imágenes según sea necesario */
+  }
+
+  .contenedor-imagenes img {
+    max-width: 220px; /* Ajusta el tamaño máximo de las imágenes según sea necesario */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  .contenedor-imagenes a:hover img {
+    transform: scale(1.09); /* Ajusta la escala según sea necesario */
+  }
+</style>
+
+<div class="contenedor-imagenes">
+  <a href="index.php?modulo=hombre">
+    <img src="categoriaimg\Hombreu.png" alt="Slide 1">
+  </a>
+  <a href="index.php?modulo=mujer">
+    <img src="categoriaimg\Mujeru.png" alt="Slide 2">
+  </a>
+  <a href="index.php?modulo=niño">
+    <img src="categoriaimg\Niño.png" alt="Slide 3">
+  </a>
+  <a href="index.php?modulo=estudiante">
+    <img src="categoriaimg\estudiantes.png" alt="Slide 4">
+  </a>
+</div>
+
 </body>
 
      

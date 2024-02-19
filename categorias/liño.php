@@ -15,9 +15,12 @@
             margin: 0 auto; /* Centra la imagen horizontalmente */
         }
     </style>
+    
 </head>
 <body>
-    
+<div class="col-12 text-center">
+        <h2 style="font-weight: bold; color: black;  "> Ropa para niños</h2>
+</div>
     <?php
     $where = " where 1=1 ";
     $nombre = mysqli_real_escape_string($con, $_REQUEST['nombre'] ?? '');
@@ -61,6 +64,7 @@
                         ";
 
 ?>
+
     <div class="centradorr">
         <?php
             $res = mysqli_query($con, $query);

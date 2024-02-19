@@ -23,8 +23,7 @@
     <!-- Pasarela de pago -->
     <link rel="stylesheet" href="admin/css/stripe.css">
     <link rel="stylesheet" href="admin\css\prod.css">
-   <!-- Pasarela de pago  -->
-   
+
    <link rel="stylesheet" href="admin\css\hdhdh.css">
    
 
@@ -107,6 +106,7 @@ $con = mysqli_connect($host, $user, $pass, $db);
                 if( $modulo=="resultados" ){
                     include_once "resultados.php";
                 }
+           
                 ?>
             </div>
         </div>

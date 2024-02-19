@@ -17,6 +17,9 @@
     </style>
 </head>
 <body>
+<div class="col-12 text-center">
+        <h2 style="font-weight: bold; color: black;  "> Ropa para estudiantes</h2>
+</div>
     
     <?php
     $where = " where 1=1 ";

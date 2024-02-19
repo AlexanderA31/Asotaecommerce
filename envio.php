@@ -105,7 +105,7 @@ if (isset($_SESSION['idCliente'])) {
     <button type="submit" class="btn btn-primary" name="guardar" value="guardar">
         Ir a pagar <i class="fas fa-chevron-right"></i>
     </button>
-</div>
+</div><br>
 
     </form>
 <?php

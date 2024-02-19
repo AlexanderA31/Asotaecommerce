@@ -1,3 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
 <?php
 
 if (isset($_SESSION['idCliente'])) {
@@ -38,7 +54,7 @@ if ($resCli) {
 ?>
 
 <!-- Agrega el formulario para editar los datos del cliente -->
-<form method="post" id="miFormulario">
+
     <div class="container mt-3">
         <div class="row">
             <div class="col-6">
@@ -67,7 +83,7 @@ if ($resCli) {
             </div>
         </div>
     </div>
-</form>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -91,7 +107,9 @@ if ($resCli) {
     });
 </script>
 
+</body>
 
+  
 
 <div class="container-fluid">
         <div class="row">
@@ -150,5 +168,4 @@ if ($resCli) {
         </div>
         <!-- /.row -->
       </div>
-
   </div>

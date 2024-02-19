@@ -138,17 +138,29 @@
                       <p>Productos</p>
                     </a>
                   </li>
-                  
-                    <li class="nav-item">
+
+                  <li class="nav-item">
                       <a href="panel.php?modulo=ventas" class="nav-link <?php echo ($modulo=="ventas" )?" active ":" "; ?> ">
                         <i class="fa fa-table nav-icon"></i>
                         <p>Ventas</p>
                       </a>
                     </li>
+                  
+                    <li class="nav-item">
+                      <a href="panel.php?modulo=reportes" class="nav-link <?php echo ($modulo=="reportes" )?" active ":" "; ?> ">
+                        <i class="fa fa-table nav-icon"></i>
+                        <p>Reporte</p>
+                      </a>
+                    </li>
+                    
+                    
+
         </ul>
       </nav>
+     
       <!-- /.sidebar-menu -->
     </div>
+    
     <!-- /.sidebar -->
   </aside>
   <?php
@@ -171,6 +183,9 @@
       }
       if($modulo=="productos"){
         include_once "productos.php";
+      }
+      if($modulo=="reportes"){
+        include_once "reportes.php";
       }
       if($modulo=="ventas"){
         include_once "ventas.php";

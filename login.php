@@ -21,15 +21,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <style>
-    body {
-      background-image: url('admin/dist/img/fondo3.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
-
-    }
-    
+  
   </style>
 
 <body class="hold-transition login-page">

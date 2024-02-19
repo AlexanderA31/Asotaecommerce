@@ -29,14 +29,16 @@ $(document).ready(function () {
                         <td>${element['nombre']}</td>
                         <td>
                         ${element['cantidad']}
-                        <button type="button" class="btn-xs btn-primary mas" 
-                        data-id="${element['id']}"
-                        data-tipo="mas"
-                        >+</button>
-                        <button type="button" class="btn-xs btn-danger menos" 
-                        data-id="${element['id']}"
-                        data-tipo="menos"
-                        >-</button>
+                        <button type="button" class="btn btn-sm btn-success mas" 
+                            data-id="${element['id']}"
+                            data-tipo="mas"
+                            >+</button>
+
+                    <button type="button" class="btn btn-sm btn-warning menos" 
+                            data-id="${element['id']}"
+                            data-tipo="menos"
+                            >-</button>
+
                     </td>
                 <td>$${precio.toFixed(2)}</td>
                 <td>$${totalProd.toFixed(2)}</td>

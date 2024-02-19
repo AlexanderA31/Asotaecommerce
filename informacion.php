@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Ajustar el tamaño de las imágenes en el carrusel */
         #myCarousel img {
@@ -19,6 +20,21 @@
 </head>
 <body>
 <br>
+<style>
+      h2 {
+      color: #1E90FF; /* Cambia el color del título */
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #333; /* Cambia el color del texto */
+      font-size: 18px;
+      line-height: 1.6;
+    }
+       
+    </style>
 <div class="container">
         <div class="row">
           <div class="col-12">

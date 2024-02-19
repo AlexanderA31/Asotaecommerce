@@ -423,7 +423,7 @@
                               <a href="index.php?modulo=informacion" class="menu-title">Quienes somos</a>
                               </li>
                             <li class="menu-category">
-                              <a href="index.php?modulo=temporada" class="menu-title">Ver tallas</a>
+                              <a href="" class="menu-title">Ver tallas</a>
 
                               <ul class="dropdown-list">
 

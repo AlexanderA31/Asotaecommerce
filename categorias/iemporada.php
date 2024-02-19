@@ -17,7 +17,9 @@
     </style>
 </head>
 <body>
-    
+<div class="col-12 text-center">
+        <h2 style="font-weight: bold; color: black;  "> Ropa de temporada</h2>
+</div>
     <?php
     $where = " where 1=1 ";
     $nombre = mysqli_real_escape_string($con, $_REQUEST['nombre'] ?? '');

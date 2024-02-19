@@ -6536,7 +6536,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   position: relative;
   display: none;
   float: left;
-  width: 100%;
+  width: 150%;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
