@@ -106,6 +106,7 @@ $con = mysqli_connect($host, $user, $pass, $db);
                 if( $modulo=="resultados" ){
                     include_once "resultados.php";
                 }
+              
            
                 ?>
             </div>

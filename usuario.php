@@ -55,8 +55,8 @@ if ($resCli) {
 
 <!-- Agrega el formulario para editar los datos del cliente -->
 
-    <div class="container mt-3">
-        <div class="row">
+    <div class="container">
+        <div class="">
             <div class="col-6">
                 <h3>Datos del Usuario</h3>
                 <div class="form-group">

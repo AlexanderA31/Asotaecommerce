@@ -1,5 +1,7 @@
 {
     "require": {
-        "dompdf/dompdf": "^2.0"
+        "dompdf/dompdf": "^2.0",
+        "twilio/sdk": "^7.16",
+        "guzzlehttp/guzzle": "^7.8"
     }
 }

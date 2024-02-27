@@ -268,7 +268,7 @@ transition: var(--transition-timing);
 
 .header-main {
 padding: 20px 0;
-border-bottom: 1px solid var(--cultured);
+border-bottom: 1px solid hsl(199.7, 100%, 53.3%);
 }
 
 .header-logo { margin-bottom: 20px; }

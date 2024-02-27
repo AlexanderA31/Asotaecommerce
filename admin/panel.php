@@ -140,6 +140,20 @@
                   </li>
 
                   <li class="nav-item">
+                      <a href="panel.php?modulo=publicidad" class="nav-link <?php echo ($modulo=="publicidad" )?" active ":" "; ?> ">
+                      <i class="fa fa-bullhorn nav-icon"></i>
+                        <p>Publicidad</p>
+                      </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a href="panel.php?modulo=proveedores" class="nav-link <?php echo ($modulo=="proveedores" )?" active ":" "; ?> ">
+                      <i class="fa fa-truck nav-icon"></i>
+                        <p>Proveedores</p>
+                      </a>
+                    </li>
+
+                  <li class="nav-item">
                       <a href="panel.php?modulo=ventas" class="nav-link <?php echo ($modulo=="ventas" )?" active ":" "; ?> ">
                         <i class="fa fa-table nav-icon"></i>
                         <p>Ventas</p>
@@ -152,7 +166,12 @@
                         <p>Reporte</p>
                       </a>
                     </li>
-                    
+                    <li class="nav-item">
+                      <a href="panel.php?modulo=reportes" class="nav-link <?php echo ($modulo=="reportes" )?" active ":" "; ?> ">
+                        <i class="fa fa-table nav-icon"></i>
+                        <p>Mercansia</p>
+                      </a>
+                    </li>
                     
 
         </ul>
@@ -202,6 +221,12 @@
       if($modulo=="editarp"){
         include_once "editarp.php";
       }
+      if($modulo=="publicidad"){
+        include_once "publicidad.php";
+      }
+      if( $modulo=="proveedores" ){
+        include_once "proveedores.php";
+    }
     ?>
  
  

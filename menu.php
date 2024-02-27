@@ -4,7 +4,7 @@
                     <meta charset="UTF-8">
                     <meta http-equiv="X-UA-Compatible" content="IE=edge">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Asotaecommerce</title>
+                    <title>Asotaeco</title>
 
                     <!--
                       - favicon
@@ -24,6 +24,7 @@
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
                       rel="stylesheet">
 
+
                   </head>
 
                   <body>
@@ -31,14 +32,20 @@
 
                     <header>
 
-                   
+                    <style>
+                      .header-main {
+                           border-bottom: 1px solid hsl(101.2, 96%, 50.6%);
+                          }
+                              </style>
 
                       <div class="container header-main">
-
+                     
                         <div class="container">
 
                           <a href="index.php" class="header-logo">
+                           
                             <img src="imgss\aso.png" alt="Anon's logo" width="50" height="50">
+                            <a>Asotaeco</a>
                           </a>
 
                           <div class="header-search-container">
@@ -59,6 +66,8 @@
                                
 
                             </a>
+                            <style>
+                              </style>
                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                                 <?php
                                 if (isset($_SESSION['idCliente']) == false) {
@@ -87,14 +96,12 @@
                                 ?>
                             </div>
                         </li>
-                        <li>Mi cuenta</li>
+               
 
                           <div class="header-user-actions">
 
                           
-                          <li class="nav-itema" style="color: red;">
-                                <span>|</span>
-                            </li>
+                        
                   
                               <li class="nav-item dropdown">
                             <a class="nav-link" data-toggle="dropdown" href="#" id="iconoCarrito">
@@ -105,7 +112,7 @@
 
                             </div>
                         </li>
-                        <li>Mis compras</li>
+                      
                       
                             
 

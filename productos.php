@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function(){
 </div> 
 </div> 
 <div style="margin-left: 20px;">
-  <h2 style="font-weight: ; color: black; "> Ropa de Temporada </h2>
+  <h2 style="font-weight: ; color: black; "> Ropa que debes conocer</h2>
   
 </div>
 <style>
@@ -207,16 +207,20 @@ document.addEventListener("DOMContentLoaded", function(){
       }
     }
 </style>
-
+<?php
+    // Consulta para obtener la información de la publicidad
+    $queryPublicidad = "SELECT id, imagen, descripcion FROM publicidad ";
+    $resPublicidad = mysqli_query($con, $queryPublicidad);
+    $rowPublicidad = mysqli_fetch_assoc($resPublicidad);
+?>
 <div class="containeru">
   <div class="text-container">
 
-    <p>Sumérgete en la frescura y la elegancia de la primavera con la encantadora camisa "Flores de Asotaeco" de la prestigiosa Asociación Textil Artesanal Asotaeco. Esta prenda única combina la 
-        maestría artesanal con la vibrante esencia de la naturaleza, creando un diseño que captura la belleza efímera de las flores en plena temporada.</p>
+    <p><?php echo $rowPublicidad['descripcion']; ?></p>
   </div>
 
   <div class="image-container">
-    <img class="image" src="imgss\tempo.jpeg" alt="Imagen Grande">
+    <img class="image" src="admin\imgpubli\1_1.jpg" alt="Imagen Grande">
   </div>
 </div>
 
